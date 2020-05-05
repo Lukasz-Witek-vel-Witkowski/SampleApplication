@@ -8,6 +8,13 @@ namespace SampleApplication.Model
 {
     class ModelProducts
     {
+        static ModelProducts instance;
+        public static ModelProducts get()
+        {
+            if (instance == null)
+                instance = new ModelProducts();
+            return instance;
+        }
         private List<Product> Products;
 
         public ModelProducts()
