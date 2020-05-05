@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.LV_Main = new System.Windows.Forms.ListView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.LV_Option = new System.Windows.Forms.ListView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.bt_buy = new System.Windows.Forms.Button();
+            this.bt_info = new System.Windows.Forms.Button();
+            this.bt_help = new System.Windows.Forms.Button();
+            this.bt_4 = new System.Windows.Forms.Button();
+            this.bt_5 = new System.Windows.Forms.Button();
+            this.Heading_main = new System.Windows.Forms.TextBox();
+            this.Heading_option = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -50,10 +50,10 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.09045F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.90955F));
-            this.tableLayoutPanel1.Controls.Add(this.listView1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.LV_Main, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Heading_main, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Heading_option, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -62,20 +62,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(796, 444);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // listView1
+            // LV_Main
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 31);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(536, 410);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.LV_Main.HideSelection = false;
+            this.LV_Main.Location = new System.Drawing.Point(3, 31);
+            this.LV_Main.Name = "LV_Main";
+            this.LV_Main.Size = new System.Drawing.Size(536, 410);
+            this.LV_Main.TabIndex = 0;
+            this.LV_Main.UseCompatibleStateImageBehavior = false;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.listView2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.LV_Option, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(545, 31);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -85,85 +85,85 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(248, 410);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // listView2
+            // LV_Option
             // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(3, 3);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(242, 285);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.LV_Option.HideSelection = false;
+            this.LV_Option.Location = new System.Drawing.Point(3, 3);
+            this.LV_Option.Name = "LV_Option";
+            this.LV_Option.Size = new System.Drawing.Size(242, 285);
+            this.LV_Option.TabIndex = 0;
+            this.LV_Option.UseCompatibleStateImageBehavior = false;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.bt_buy);
+            this.flowLayoutPanel1.Controls.Add(this.bt_info);
+            this.flowLayoutPanel1.Controls.Add(this.bt_help);
+            this.flowLayoutPanel1.Controls.Add(this.bt_4);
+            this.flowLayoutPanel1.Controls.Add(this.bt_5);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 296);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(242, 111);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // button1
+            // bt_buy
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(239, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bt_buy.Location = new System.Drawing.Point(3, 3);
+            this.bt_buy.Name = "bt_buy";
+            this.bt_buy.Size = new System.Drawing.Size(239, 30);
+            this.bt_buy.TabIndex = 0;
+            this.bt_buy.Text = "button1";
+            this.bt_buy.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // bt_info
             // 
-            this.button2.Location = new System.Drawing.Point(3, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 29);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bt_info.Location = new System.Drawing.Point(3, 39);
+            this.bt_info.Name = "bt_info";
+            this.bt_info.Size = new System.Drawing.Size(110, 29);
+            this.bt_info.TabIndex = 1;
+            this.bt_info.Text = "button2";
+            this.bt_info.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // bt_help
             // 
-            this.button3.Location = new System.Drawing.Point(119, 39);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 29);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.bt_help.Location = new System.Drawing.Point(119, 39);
+            this.bt_help.Name = "bt_help";
+            this.bt_help.Size = new System.Drawing.Size(120, 29);
+            this.bt_help.TabIndex = 2;
+            this.bt_help.Text = "button3";
+            this.bt_help.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // bt_4
             // 
-            this.button4.Location = new System.Drawing.Point(3, 74);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 34);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.bt_4.Location = new System.Drawing.Point(3, 74);
+            this.bt_4.Name = "bt_4";
+            this.bt_4.Size = new System.Drawing.Size(110, 34);
+            this.bt_4.TabIndex = 3;
+            this.bt_4.Text = "button4";
+            this.bt_4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // bt_5
             // 
-            this.button5.Location = new System.Drawing.Point(119, 74);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 34);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.bt_5.Location = new System.Drawing.Point(119, 74);
+            this.bt_5.Name = "bt_5";
+            this.bt_5.Size = new System.Drawing.Size(120, 34);
+            this.bt_5.TabIndex = 4;
+            this.bt_5.Text = "button5";
+            this.bt_5.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // Heading_main
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(536, 22);
-            this.textBox1.TabIndex = 2;
+            this.Heading_main.Location = new System.Drawing.Point(3, 3);
+            this.Heading_main.Name = "Heading_main";
+            this.Heading_main.Size = new System.Drawing.Size(536, 22);
+            this.Heading_main.TabIndex = 2;
             // 
-            // textBox2
+            // Heading_option
             // 
-            this.textBox2.Location = new System.Drawing.Point(545, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(248, 22);
-            this.textBox2.TabIndex = 3;
+            this.Heading_option.Location = new System.Drawing.Point(545, 3);
+            this.Heading_option.Name = "Heading_option";
+            this.Heading_option.Size = new System.Drawing.Size(248, 22);
+            this.Heading_option.TabIndex = 3;
             // 
             // Form1
             // 
@@ -184,17 +184,17 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView LV_Main;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView LV_Option;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button bt_buy;
+        private System.Windows.Forms.Button bt_info;
+        private System.Windows.Forms.Button bt_help;
+        private System.Windows.Forms.Button bt_4;
+        private System.Windows.Forms.Button bt_5;
+        private System.Windows.Forms.TextBox Heading_main;
+        private System.Windows.Forms.TextBox Heading_option;
     }
 }
 
