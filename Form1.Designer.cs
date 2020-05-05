@@ -112,7 +112,7 @@
             this.bt_buy.Name = "bt_buy";
             this.bt_buy.Size = new System.Drawing.Size(239, 30);
             this.bt_buy.TabIndex = 0;
-            this.bt_buy.Text = "button1";
+            this.bt_buy.Text = "Zakończ i zapłać";
             this.bt_buy.UseVisualStyleBackColor = true;
             // 
             // bt_info
@@ -121,7 +121,7 @@
             this.bt_info.Name = "bt_info";
             this.bt_info.Size = new System.Drawing.Size(110, 29);
             this.bt_info.TabIndex = 1;
-            this.bt_info.Text = "button2";
+            this.bt_info.Text = "Informacje";
             this.bt_info.UseVisualStyleBackColor = true;
             // 
             // bt_help
@@ -130,7 +130,7 @@
             this.bt_help.Name = "bt_help";
             this.bt_help.Size = new System.Drawing.Size(120, 29);
             this.bt_help.TabIndex = 2;
-            this.bt_help.Text = "button3";
+            this.bt_help.Text = "Pomoc";
             this.bt_help.UseVisualStyleBackColor = true;
             // 
             // bt_Add_quantity
@@ -139,7 +139,7 @@
             this.bt_Add_quantity.Name = "bt_Add_quantity";
             this.bt_Add_quantity.Size = new System.Drawing.Size(110, 34);
             this.bt_Add_quantity.TabIndex = 3;
-            this.bt_Add_quantity.Text = "button4";
+            this.bt_Add_quantity.Text = "Podaj ilość ";
             this.bt_Add_quantity.UseVisualStyleBackColor = true;
             // 
             // bt_Other_products
@@ -148,7 +148,7 @@
             this.bt_Other_products.Name = "bt_Other_products";
             this.bt_Other_products.Size = new System.Drawing.Size(120, 34);
             this.bt_Other_products.TabIndex = 4;
-            this.bt_Other_products.Text = "button5";
+            this.bt_Other_products.Text = "Dodaj produkt";
             this.bt_Other_products.UseVisualStyleBackColor = true;
             // 
             // Heading_main
