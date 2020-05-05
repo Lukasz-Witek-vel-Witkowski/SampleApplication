@@ -43,6 +43,7 @@ namespace SampleApplication
             this.Heading_main = new System.Windows.Forms.TextBox();
             this.Heading_option = new System.Windows.Forms.TextBox();
             this.listProductsView = new ListProductsView(LV_Main);
+            this.productView = new ProductView(LV_Option);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -236,6 +237,7 @@ namespace SampleApplication
         private System.Windows.Forms.TextBox Heading_main;
         private System.Windows.Forms.TextBox Heading_option;
         private ListProductsView listProductsView;
+        private ProductView productView;
     }
 }
 

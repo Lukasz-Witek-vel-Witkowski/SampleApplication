@@ -22,8 +22,4 @@ namespace SampleApplication
             
         }
     }
-    /*private void addProduct()
-    {
-
-    }*/
 }
