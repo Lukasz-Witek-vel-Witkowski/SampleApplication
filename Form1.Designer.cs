@@ -36,8 +36,8 @@
             this.bt_buy = new System.Windows.Forms.Button();
             this.bt_info = new System.Windows.Forms.Button();
             this.bt_help = new System.Windows.Forms.Button();
-            this.bt_4 = new System.Windows.Forms.Button();
-            this.bt_5 = new System.Windows.Forms.Button();
+            this.bt_Add_quantity = new System.Windows.Forms.Button();
+            this.bt_Other_products = new System.Windows.Forms.Button();
             this.Heading_main = new System.Windows.Forms.TextBox();
             this.Heading_option = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -57,17 +57,17 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.531531F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.46847F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.558558F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.44144F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(796, 444);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // LV_Main
             // 
             this.LV_Main.HideSelection = false;
-            this.LV_Main.Location = new System.Drawing.Point(3, 31);
+            this.LV_Main.Location = new System.Drawing.Point(3, 40);
             this.LV_Main.Name = "LV_Main";
-            this.LV_Main.Size = new System.Drawing.Size(536, 410);
+            this.LV_Main.Size = new System.Drawing.Size(536, 401);
             this.LV_Main.TabIndex = 0;
             this.LV_Main.UseCompatibleStateImageBehavior = false;
             // 
@@ -77,12 +77,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.LV_Option, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(545, 31);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(545, 40);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.53465F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.46535F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(248, 410);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(248, 401);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // LV_Option
@@ -90,25 +90,25 @@
             this.LV_Option.HideSelection = false;
             this.LV_Option.Location = new System.Drawing.Point(3, 3);
             this.LV_Option.Name = "LV_Option";
-            this.LV_Option.Size = new System.Drawing.Size(242, 285);
+            this.LV_Option.Size = new System.Drawing.Size(242, 280);
             this.LV_Option.TabIndex = 0;
             this.LV_Option.UseCompatibleStateImageBehavior = false;
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.bt_Other_products);
+            this.flowLayoutPanel1.Controls.Add(this.bt_Add_quantity);
             this.flowLayoutPanel1.Controls.Add(this.bt_buy);
             this.flowLayoutPanel1.Controls.Add(this.bt_info);
             this.flowLayoutPanel1.Controls.Add(this.bt_help);
-            this.flowLayoutPanel1.Controls.Add(this.bt_4);
-            this.flowLayoutPanel1.Controls.Add(this.bt_5);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 296);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 289);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(242, 111);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(242, 109);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // bt_buy
             // 
-            this.bt_buy.Location = new System.Drawing.Point(3, 3);
+            this.bt_buy.Location = new System.Drawing.Point(3, 43);
             this.bt_buy.Name = "bt_buy";
             this.bt_buy.Size = new System.Drawing.Size(239, 30);
             this.bt_buy.TabIndex = 0;
@@ -117,7 +117,7 @@
             // 
             // bt_info
             // 
-            this.bt_info.Location = new System.Drawing.Point(3, 39);
+            this.bt_info.Location = new System.Drawing.Point(3, 79);
             this.bt_info.Name = "bt_info";
             this.bt_info.Size = new System.Drawing.Size(110, 29);
             this.bt_info.TabIndex = 1;
@@ -126,44 +126,54 @@
             // 
             // bt_help
             // 
-            this.bt_help.Location = new System.Drawing.Point(119, 39);
+            this.bt_help.Location = new System.Drawing.Point(119, 79);
             this.bt_help.Name = "bt_help";
             this.bt_help.Size = new System.Drawing.Size(120, 29);
             this.bt_help.TabIndex = 2;
             this.bt_help.Text = "button3";
             this.bt_help.UseVisualStyleBackColor = true;
             // 
-            // bt_4
+            // bt_Add_quantity
             // 
-            this.bt_4.Location = new System.Drawing.Point(3, 74);
-            this.bt_4.Name = "bt_4";
-            this.bt_4.Size = new System.Drawing.Size(110, 34);
-            this.bt_4.TabIndex = 3;
-            this.bt_4.Text = "button4";
-            this.bt_4.UseVisualStyleBackColor = true;
+            this.bt_Add_quantity.Location = new System.Drawing.Point(129, 3);
+            this.bt_Add_quantity.Name = "bt_Add_quantity";
+            this.bt_Add_quantity.Size = new System.Drawing.Size(110, 34);
+            this.bt_Add_quantity.TabIndex = 3;
+            this.bt_Add_quantity.Text = "button4";
+            this.bt_Add_quantity.UseVisualStyleBackColor = true;
             // 
-            // bt_5
+            // bt_Other_products
             // 
-            this.bt_5.Location = new System.Drawing.Point(119, 74);
-            this.bt_5.Name = "bt_5";
-            this.bt_5.Size = new System.Drawing.Size(120, 34);
-            this.bt_5.TabIndex = 4;
-            this.bt_5.Text = "button5";
-            this.bt_5.UseVisualStyleBackColor = true;
+            this.bt_Other_products.Location = new System.Drawing.Point(3, 3);
+            this.bt_Other_products.Name = "bt_Other_products";
+            this.bt_Other_products.Size = new System.Drawing.Size(120, 34);
+            this.bt_Other_products.TabIndex = 4;
+            this.bt_Other_products.Text = "button5";
+            this.bt_Other_products.UseVisualStyleBackColor = true;
             // 
             // Heading_main
             // 
+            this.Heading_main.BackColor = System.Drawing.Color.Red;
+            this.Heading_main.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Heading_main.ForeColor = System.Drawing.SystemColors.Window;
             this.Heading_main.Location = new System.Drawing.Point(3, 3);
             this.Heading_main.Name = "Heading_main";
-            this.Heading_main.Size = new System.Drawing.Size(536, 22);
+            this.Heading_main.Size = new System.Drawing.Size(536, 30);
             this.Heading_main.TabIndex = 2;
+            this.Heading_main.Text = "Lista zakupów";
+            this.Heading_main.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Heading_option
             // 
+            this.Heading_option.BackColor = System.Drawing.Color.Red;
+            this.Heading_option.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Heading_option.ForeColor = System.Drawing.SystemColors.Window;
             this.Heading_option.Location = new System.Drawing.Point(545, 3);
             this.Heading_option.Name = "Heading_option";
-            this.Heading_option.Size = new System.Drawing.Size(248, 22);
+            this.Heading_option.Size = new System.Drawing.Size(248, 30);
             this.Heading_option.TabIndex = 3;
+            this.Heading_option.Text = "Informacja o produkcie";
+            this.Heading_option.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
@@ -191,8 +201,8 @@
         private System.Windows.Forms.Button bt_buy;
         private System.Windows.Forms.Button bt_info;
         private System.Windows.Forms.Button bt_help;
-        private System.Windows.Forms.Button bt_4;
-        private System.Windows.Forms.Button bt_5;
+        private System.Windows.Forms.Button bt_Add_quantity;
+        private System.Windows.Forms.Button bt_Other_products;
         private System.Windows.Forms.TextBox Heading_main;
         private System.Windows.Forms.TextBox Heading_option;
     }
