@@ -9,12 +9,12 @@ namespace SampleApplication
 {
     class Product
     {
-     private string Name;    //Product Name
-     private ulong Number;   //System number
-     private double Price;   //Product Price
-     private string Description; //Product Description
-     private ulong ID;   //System ID
-     private string Image;   //Photo address
+        private string Name;   //Product Name
+        private ulong Number;  //System number
+        private double Price;  //Product Price
+        private string Description; //Product Description
+        private ulong ID;  //System ID
+        private string Image;   //Photo address
 
         public Product(string name, ulong number,double price, ulong id)
         {

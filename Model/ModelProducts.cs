@@ -9,7 +9,7 @@ namespace SampleApplication.Model
     class ModelProducts
     {
         static ModelProducts instance;
-        public static ModelProducts get()
+        public static ModelProducts Instance()
         {
             if (instance == null)
                 instance = new ModelProducts();

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SampleApplication.Model;
+using SampleApplication.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,13 @@ namespace SampleApplication
         public Form1()
         {
             InitializeComponent();
+            ModelProduct.Instance();
+            ModelProducts.Instance();
+            
         }
     }
+    /*private void addProduct()
+    {
+
+    }*/
 }
