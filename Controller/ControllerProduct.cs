@@ -19,18 +19,13 @@ namespace SampleApplication.Controller
             return instance;
         }
 
-        public void RegisterView(IView view)
+        public void RegisterView( IView view )
         {
-            this.ModelChangeEvent += new ModelChangeDelegate(view.ModelChange);
+            this.ModelChangeEvent += new ModelChangeDelegate( view.ModelChange );
         }
-        public void UnregisterView(IView view)
+        public void UnregisterView( IView view )
         {
-            this.ModelChangeEvent -= new ModelChangeDelegate(view.ModelChange);
-        }
-        public void RaiseModelChange(object sender, ModelChangeEventArgs e)
-        {
-            if (ModelChangeEvent != null)
-                ModelChangeEvent(sender, e);
+            this.ModelChangeEvent -= new ModelChangeDelegate( view.ModelChange );
         }
     }
 
@@ -41,12 +36,12 @@ namespace SampleApplication.Controller
 
     public class ModelChangeEventArgs
     {
-        public int Number;
+        public int ID;
 
         private ModelChangeEventArgs() { }
-        public ModelChangeEventArgs(int number)
+        public ModelChangeEventArgs(int id)
         {
-           Number = number;
+           ID = id;
         }
 
     }

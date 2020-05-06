@@ -1,4 +1,5 @@
 ﻿using SampleApplication.Model;
+using SampleApplication.SQL;
 using SampleApplication.View;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace SampleApplication
         public Form1()
         {
             InitializeComponent();
+            this.manager = new Manager("Confing.txt");
             ModelProduct.Instance();
             ModelProducts.Instance();
             

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SampleApplication
 {
-    class Product
+    public class Product
     {
         private string Name;   //Product Name
         private ulong Number;  //System number
@@ -16,13 +16,7 @@ namespace SampleApplication
         private ulong ID;  //System ID
         private string Image;   //Photo address
 
-        public Product(string name, ulong number,double price, ulong id)
-        {
-            Name = name;
-            Number = number;
-            Price = price;
-            ID = id;
-        }
+
         public Product(string name, ulong number, double price, string description, ulong id, string image)
         {
             Name = name;
@@ -62,13 +56,5 @@ namespace SampleApplication
             return Image;
         }
 
-        public void setImage(string image)
-        {
-            Image = image;
-        }
-        public void setDescription(string description)
-        {
-            Description = description;
-        }
     }
 }

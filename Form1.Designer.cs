@@ -1,4 +1,5 @@
-﻿using SampleApplication.View;
+﻿using SampleApplication.SQL;
+using SampleApplication.View;
 
 namespace SampleApplication
 {
@@ -42,8 +43,6 @@ namespace SampleApplication
             this.bt_help = new System.Windows.Forms.Button();
             this.Heading_main = new System.Windows.Forms.TextBox();
             this.Heading_option = new System.Windows.Forms.TextBox();
-            this.listProductsView = new ListProductsView(LV_Main);
-            this.productView = new ProductView(LV_Option);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -238,6 +237,7 @@ namespace SampleApplication
         private System.Windows.Forms.TextBox Heading_option;
         private ListProductsView listProductsView;
         private ProductView productView;
+        private Manager manager;
     }
 }
 
