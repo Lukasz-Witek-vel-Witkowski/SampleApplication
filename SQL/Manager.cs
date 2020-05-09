@@ -26,26 +26,28 @@ namespace SampleApplication.SQL
             if(File.Exists(Path)){
                 StreamReader streamReader = new StreamReader(Path);
                 String s;
+                int tempStart;
+                int tempStop;
                 do
                 {
                     s = streamReader.ReadLine();
-                    if (s.IndexOf("DataBase") != 0)
+                    if (s != null)
                     {
-                        Database = s.Substring(s.IndexOf(" \""), s.IndexOf("\" "));
-                    }
-                    if (s.IndexOf("Address") != 0)
-                    {
-                        Address = s.Substring(s.IndexOf(" \""), s.IndexOf("\" "));
-                    }
-                    if (s.IndexOf("User") != 0)
-                    {
-                        User = s.Substring(s.IndexOf(" \""), s.IndexOf("\" "));
-                    }
-                    if (s.IndexOf("Password") != 0)
-                    {
-                        Password = s.Substring(s.IndexOf(" \""), s.IndexOf("\" "));
-                    }
+                        tempStart = s.IndexOf(" \"");
+                        tempStop = s.IndexOf("\" ");
+                      
+                        if (s.IndexOf("DataBase") != -1)
+                            Database = s.Substring(tempStart+2, tempStop - tempStart-2);
 
+                        else if (s.IndexOf("Address") != -1)
+                            Address = s.Substring(tempStart+2, tempStop - tempStart-2);
+
+                        else if (s.IndexOf("User") != -1)
+                            User = s.Substring(tempStart+2, tempStop - tempStart-2);
+
+                        else if (s.IndexOf("Password") != -1)
+                            Password = s.Substring(tempStart+2, tempStop - tempStart-2);
+                    }
                 } while (s != null);
                 streamReader.Close();
             }
@@ -55,6 +57,7 @@ namespace SampleApplication.SQL
             }
             sql = new ManagerSQL(Address, Database, User, Password);
             sql.connect();
+            sql.querry("Select * from dbo.Products");
         }
 
         public ManagerSQL getManagerSQL()

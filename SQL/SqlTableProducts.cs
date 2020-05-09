@@ -10,31 +10,35 @@ namespace SampleApplication.SQL
     public class SqlTableProducts
     {
         List<QueryProduct> list;
-       public SqlTableProducts()
+        public SqlTableProducts()
         {
-
+            list = new List<QueryProduct>();
         }
         public void add(SqlDataReader sqlDataReader)
         {
             QueryProduct queryProduct = new QueryProduct();
-            queryProduct.Name = sqlDataReader["Name"].ToString();
-            queryProduct.ID = sqlDataReader["ID"].ToString();
-            queryProduct.Number = sqlDataReader["Number"].ToString();
-            queryProduct.Description = sqlDataReader["Description"].ToString();
-            queryProduct.Price = sqlDataReader["Price"].ToString();
-            queryProduct.Image = sqlDataReader["Image"].ToString();
-            list.Add(queryProduct);
+            while (sqlDataReader.Read())
+            {
+                queryProduct.ID = sqlDataReader["ID"].ToString();
+                queryProduct.Name = sqlDataReader["Name"].ToString();
+                queryProduct.Number = sqlDataReader["Number"].ToString();
+                queryProduct.Description = sqlDataReader["Descryption"].ToString();
+                queryProduct.Price = sqlDataReader["Price"].ToString();
+                queryProduct.Image = sqlDataReader["Image"].ToString();
+                list.Add(queryProduct);
+            }
         }
 
         public int Size()
         {
             return list.Count;
         }
-       
+
         public Product getProduct(int index)
         {
-         
-            if (list.Count > index) {
+
+            if (list.Count > index)
+            {
                 Product product;
                 QueryProduct queryProduct = list.ElementAt(index);
                 product = new Product(queryProduct.Name,
@@ -57,6 +61,6 @@ namespace SampleApplication.SQL
         public String Price { get; set; }
         public String Number { get; set; }
         public String Image { get; set; }
-       public QueryProduct() { }
+        public QueryProduct() { }
     }
 }

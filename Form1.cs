@@ -18,7 +18,7 @@ namespace SampleApplication
         public Form1()
         {
             InitializeComponent();
-            this.manager = new Manager("Confing.txt");
+            this.manager = new Manager("A:\\Project\\Wlasne\\SampleApplication\\Config.txt");
             ModelProduct.Instance();
             ModelProducts.Instance();
             

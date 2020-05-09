@@ -30,17 +30,18 @@ namespace SampleApplication
         }
         public void connect()
         {
-            String data ="";
+            //String data = "Data source=LUKASZ-KOMPUTER\\SQLEXPRESS; database=SampleApplication; User id=api; Password=123";
             try
             {
-            //    sqlConnection = new SqlConnection(data);
-           //     sqlConnection.Open();
+                sqlConnection = new SqlConnection("Data source="+Addres+"; database="+Database+"; User id="+User+"; Password="+Password);
+                sqlConnection.Open();
             }
             catch (SqlException e)
             {
                 Debug.WriteLine("Error Connect DataBase");
                 Debug.WriteLine(e.Message);
             }
+
         }
         public void querry(String data)
         {
