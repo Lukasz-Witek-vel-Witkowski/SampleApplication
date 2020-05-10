@@ -1,4 +1,5 @@
-﻿using SampleApplication.SQL;
+﻿using SampleApplication.Controller;
+using SampleApplication.SQL;
 using SampleApplication.View;
 using System;
 
@@ -279,7 +280,7 @@ namespace SampleApplication
         private void timer_Trick(object sender, EventArgs e)
         {
             timer.Stop();
-            setNumber(client.getNext());
+            ControllerProduct.Instance().RaiseModelChange(this, new ModelChangeEventArgs(client.getNext()));
             timer.Start();
         }
         #endregion
