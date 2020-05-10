@@ -17,11 +17,20 @@ namespace SampleApplication
     {
         public Form1()
         {
-            InitializeComponent();
+            
             this.manager = new Manager("A:\\Project\\Wlasne\\SampleApplication\\Config.txt");
+            client = new Client();
+            InitializeComponent();
             ModelProduct.Instance();
             ModelProducts.Instance();
-            
+            this.listProductsView = new ListProductsView(LV_Main);
+            this.productView = new ProductView(LV_Option);
+
+        }
+
+        private void LV_Main_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

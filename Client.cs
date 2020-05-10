@@ -13,6 +13,7 @@ namespace SampleApplication
         private int iterator;
         public Client()
         {
+            LData = new List<int>();
             loadData("A:\\Project\\Wlasne\\SampleApplication\\doc.txt");
         }
         void loadData(String path)

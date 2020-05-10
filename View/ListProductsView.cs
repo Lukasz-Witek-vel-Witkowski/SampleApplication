@@ -14,11 +14,17 @@ namespace SampleApplication.View
         public ListProductsView(ListView list)
         {
             listView = list;
-          /*  listView.Bounds = new Rectangle(new Point(10,10), new Size(300,200));
-
-            ListViewItem item = new ListViewItem("iteam", 0);
+        }
+        public void add(Product product)
+        {
+            ListViewItem item = new ListViewItem();
             item.Checked = true;
-            listView.Items.Add(item);*/
+            item.SubItems.Add(listView.Size.ToString());
+            item.SubItems.Add(product.getImage());
+            item.SubItems.Add(product.getName());
+            item.SubItems.Add(product.getDescription());
+            item.SubItems.Add(product.getPrice().ToString());
+            listView.Items.Add(item);
         }
     }
 }
