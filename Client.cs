@@ -14,6 +14,7 @@ namespace SampleApplication
         public Client()
         {
             LData = new List<int>();
+            iterator = 0;
             loadData("A:\\Project\\Wlasne\\SampleApplication\\doc.txt");
         }
         void loadData(String path)
@@ -42,7 +43,7 @@ namespace SampleApplication
         }
         public bool isNext()
         {
-            return !(iterator < LData.Count);
+            return (iterator < LData.Count);
         }
     }
 }

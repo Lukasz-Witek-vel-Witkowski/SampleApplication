@@ -9,23 +9,24 @@ namespace SampleApplication.SQL
 {
     public class SqlTableProducts
     {
-        List<QueryProduct> list;
+        List<Tuple<string, string, string, string, string, string>> list;
         public SqlTableProducts()
         {
-            list = new List<QueryProduct>();
+            list = new List<Tuple<string, string, string, string, string, string>>();
         }
         public void add(SqlDataReader sqlDataReader)
         {
-            QueryProduct queryProduct = new QueryProduct();
+
             while (sqlDataReader.Read())
             {
-                queryProduct.ID = sqlDataReader["ID"].ToString();
-                queryProduct.Name = sqlDataReader["Name"].ToString();
-                queryProduct.Number = sqlDataReader["Number"].ToString();
-                queryProduct.Description = sqlDataReader["Descryption"].ToString();
-                queryProduct.Price = sqlDataReader["Price"].ToString();
-                queryProduct.Image = sqlDataReader["Image"].ToString();
-                list.Add(queryProduct);
+                list.Add(new Tuple<string, string, string, string, string, string>(
+                                    sqlDataReader["ID"].ToString(),
+                                    sqlDataReader["Name"].ToString(),
+                                    sqlDataReader["Number"].ToString(),
+                                    sqlDataReader["Descryption"].ToString(),
+                                    sqlDataReader["Price"].ToString(),
+                                    sqlDataReader["Image"].ToString()
+                    ));
             }
         }
 
@@ -34,33 +35,26 @@ namespace SampleApplication.SQL
             return list.Count;
         }
 
-        public Product getProduct(int index)
+        public Product getProduct(int number)
         {
-
-            if (list.Count > index)
+            string data = number.ToString();
+            Tuple<string, string, string, string, string, string> tuple;
+            for (int i = 0; i < list.Count; i++)
             {
-                Product product;
-                QueryProduct queryProduct = list.ElementAt(index);
-                product = new Product(queryProduct.Name,
-                    ulong.Parse(queryProduct.Number),
-                    double.Parse(queryProduct.Price),
-                    queryProduct.Description,
-                    ulong.Parse(queryProduct.ID),
-                    queryProduct.Image);
-                return product;
+                tuple = list.ElementAt(i);
+                if (tuple.Item3 == data)
+                {
+                    return new Product(tuple.Item2,
+                        ulong.Parse(tuple.Item3),
+                        double.Parse(tuple.Item5),
+                        tuple.Item4,
+                        ulong.Parse(tuple.Item1),
+                        tuple.Item6);
+                }
             }
             return null;
+
         }
     }
 
-    internal class QueryProduct
-    {
-        public String Name { get; set; }
-        public String ID { get; set; }
-        public String Description { get; set; }
-        public String Price { get; set; }
-        public String Number { get; set; }
-        public String Image { get; set; }
-        public QueryProduct() { }
-    }
 }

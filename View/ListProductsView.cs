@@ -17,9 +17,12 @@ namespace SampleApplication.View
         }
         public void add(Product product)
         {
-            ListViewItem item = new ListViewItem();
+            if (product == null)
+            {
+                throw new ArgumentNullException();
+            }
+            ListViewItem item = new ListViewItem(listView.Items.Count.ToString());
             item.Checked = true;
-            item.SubItems.Add(listView.Size.ToString());
             item.SubItems.Add(product.getImage());
             item.SubItems.Add(product.getName());
             item.SubItems.Add(product.getDescription());
