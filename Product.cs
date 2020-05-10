@@ -10,14 +10,14 @@ namespace SampleApplication
     public class Product
     {
         private string Name;   //Product Name
-        private ulong Number;  //System number
-        private double Price;  //Product Price
+        private string Number;  //System number
+        private string Price;  //Product Price
         private string Description; //Product Description
-        private ulong ID;  //System ID
+        private string ID;  //System ID
         private string Image;   //Photo address
 
 
-        public Product(string name, ulong number, double price, string description, ulong id, string image)
+        public Product(string name, string number, string price, string description, string id, string image)
         {
             Name = name;
             Number = number;
@@ -31,12 +31,12 @@ namespace SampleApplication
             return Name;
         }
 
-        public ulong getNumber()
+        public string getNumber()
         {
             return Number;
         }
 
-        public double getPrice()
+        public string getPrice()
         {
             return Price;
         }
@@ -46,7 +46,7 @@ namespace SampleApplication
             return Description;
         }
 
-        public ulong getID()
+        public string getID()
         {
             return ID;
         }

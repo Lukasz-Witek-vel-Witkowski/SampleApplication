@@ -44,12 +44,13 @@ namespace SampleApplication.SQL
                 tuple = list.ElementAt(i);
                 if (tuple.Item3 == data)
                 {
-                    return new Product(tuple.Item2,
-                        ulong.Parse(tuple.Item3),
-                        double.Parse(tuple.Item5),
-                        tuple.Item4,
-                        ulong.Parse(tuple.Item1),
-                        tuple.Item6);
+                    return new Product( tuple.Item2,
+                                        tuple.Item3,
+                                        tuple.Item5,
+                                        tuple.Item4,
+                                        tuple.Item1,
+                                        tuple.Item6 
+                                        );
                 }
             }
             return null;

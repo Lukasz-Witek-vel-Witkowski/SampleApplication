@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SampleApplication.Model;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -11,8 +12,10 @@ namespace SampleApplication.View
     partial class ListProductsView
     {
         private ListView listView;
+        
         public ListProductsView(ListView list)
         {
+            ModelProducts.Instance();
             listView = list;
         }
         public void add(Product product)
@@ -26,8 +29,9 @@ namespace SampleApplication.View
             item.SubItems.Add(product.getImage());
             item.SubItems.Add(product.getName());
             item.SubItems.Add(product.getDescription());
-            item.SubItems.Add(product.getPrice().ToString());
+            item.SubItems.Add(product.getPrice());
             listView.Items.Add(item);
+            ModelProducts.Instance().addProduct(product);
         }
     }
 }

@@ -24,8 +24,6 @@ namespace SampleApplication
             client = new Client();
             InitializeComponent();
             ControllerProduct.Instance().RegisterView(this);
-            ModelBasket.Instance();
-            ModelProducts.Instance();
             this.listProductsView = new ListProductsView(LV_Main);
             this.productView = new ProductView(LV_Option);
             this.timer.Start();
@@ -37,9 +35,7 @@ namespace SampleApplication
             if (product != null)
             {
                 listProductsView.add(product);
-             //   productView.add(product);
-             //   ModelProducts.Instance().addProduct(product);
-             //   ModelProduct.Instance().setProduct(product);
+                productView.add(product);
             }
         }
         private void LV_Main_SelectedIndexChanged(object sender, EventArgs e)

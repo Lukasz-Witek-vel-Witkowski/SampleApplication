@@ -27,9 +27,9 @@ namespace SampleApplication.Model
             basket.addProduct(product);
             
         }
-        public Basket getProduction()
+        public double getSum()
         {
-            return basket;
+            return basket.getSum();
         }
 
     }
