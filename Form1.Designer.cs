@@ -115,6 +115,7 @@ namespace SampleApplication
             this.bt_Other_products.TabIndex = 4;
             this.bt_Other_products.Text = "Dodaj produkt";
             this.bt_Other_products.UseVisualStyleBackColor = true;
+            this.bt_Other_products.Click += new System.EventHandler(this.bt_Other_products_Click);
             // 
             // bt_Add_quantity
             // 
@@ -164,7 +165,6 @@ namespace SampleApplication
             this.LV_Option.TabIndex = 0;
             this.LV_Option.UseCompatibleStateImageBehavior = false;
             this.LV_Option.View = System.Windows.Forms.View.Details;
-
             // 
             // Heading_main
             // 
@@ -172,11 +172,12 @@ namespace SampleApplication
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Heading_main.BackColor = System.Drawing.Color.Red;
-            this.Heading_main.Enabled = false;
             this.Heading_main.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Heading_main.ForeColor = System.Drawing.SystemColors.Window;
             this.Heading_main.Location = new System.Drawing.Point(3, 3);
             this.Heading_main.Name = "Heading_main";
+            this.Heading_main.ReadOnly = true;
+            this.Heading_main.ShortcutsEnabled = false;
             this.Heading_main.Size = new System.Drawing.Size(535, 30);
             this.Heading_main.TabIndex = 2;
             this.Heading_main.Text = "Lista zakupów";
@@ -189,11 +190,11 @@ namespace SampleApplication
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Heading_option.BackColor = System.Drawing.Color.Red;
             this.Heading_option.CausesValidation = false;
-            this.Heading_option.Enabled = false;
             this.Heading_option.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Heading_option.ForeColor = System.Drawing.SystemColors.Window;
             this.Heading_option.Location = new System.Drawing.Point(544, 3);
             this.Heading_option.Name = "Heading_option";
+            this.Heading_option.ReadOnly = true;
             this.Heading_option.Size = new System.Drawing.Size(249, 30);
             this.Heading_option.TabIndex = 3;
             this.Heading_option.Text = "Informacja o produkcie";
@@ -205,7 +206,6 @@ namespace SampleApplication
             this.LV_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-  
             this.LV_Main.FullRowSelect = true;
             this.LV_Main.HideSelection = false;
             this.LV_Main.HotTracking = true;

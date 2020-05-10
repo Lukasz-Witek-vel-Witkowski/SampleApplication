@@ -52,5 +52,10 @@ namespace SampleApplication
             productView.reSize(temp);
             listProductsView.reSize(this.Width - temp - 30);
         }
+
+        private void bt_Other_products_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
