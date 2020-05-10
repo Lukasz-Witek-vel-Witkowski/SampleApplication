@@ -34,6 +34,14 @@ namespace SampleApplication
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Produkt", System.Windows.Forms.HorizontalAlignment.Center);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Koszyk", System.Windows.Forms.HorizontalAlignment.Center);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Nazwa:"}, -1, System.Drawing.Color.DarkGreen, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238))));
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Cena: "}, -1, System.Drawing.Color.DarkGreen, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238))));
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Do zapłaty: "}, -1, System.Drawing.Color.Brown, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238))));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.LV_Option = new System.Windows.Forms.ListView();
@@ -52,6 +60,8 @@ namespace SampleApplication
             this.ComDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ComPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.com1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.com2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -90,8 +100,8 @@ namespace SampleApplication
             this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.LV_Option, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.LV_Option, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(544, 41);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -105,14 +115,32 @@ namespace SampleApplication
             this.LV_Option.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.LV_Option.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.com1,
+            this.com2});
+            listViewGroup1.Header = "Produkt";
+            listViewGroup1.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            listViewGroup1.Name = "groupProduct";
+            listViewGroup2.Header = "Koszyk";
+            listViewGroup2.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            listViewGroup2.Name = "groupBasket";
+            this.LV_Option.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup1,
+            listViewGroup2});
             this.LV_Option.HideSelection = false;
+            listViewItem1.Group = listViewGroup1;
+            listViewItem2.Group = listViewGroup1;
+            listViewItem3.Group = listViewGroup2;
+            this.LV_Option.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
             this.LV_Option.Location = new System.Drawing.Point(3, 3);
             this.LV_Option.Name = "LV_Option";
             this.LV_Option.Size = new System.Drawing.Size(243, 280);
             this.LV_Option.TabIndex = 0;
             this.LV_Option.UseCompatibleStateImageBehavior = false;
             this.LV_Option.View = System.Windows.Forms.View.Details;
-            this.LV_Option.VirtualMode = true;
             // 
             // flowLayoutPanel1
             // 
@@ -257,6 +285,17 @@ namespace SampleApplication
             this.timer.Interval = 5000;
             this.timer.Tick += new System.EventHandler(this.timer_Trick);
             // 
+            // com1
+            // 
+            this.com1.Text = "Właściwości";
+            this.com1.Width = 120;
+            // 
+            // com2
+            // 
+            this.com2.Text = "Wartość";
+            this.com2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.com2.Width = 120;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -306,6 +345,8 @@ namespace SampleApplication
         private System.Windows.Forms.ColumnHeader ComDescription;
         private System.Windows.Forms.ColumnHeader ComPrice;
         private System.Windows.Forms.ColumnHeader comNumber;
+        private System.Windows.Forms.ColumnHeader com1;
+        private System.Windows.Forms.ColumnHeader com2;
     }
 }
 

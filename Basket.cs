@@ -10,11 +10,13 @@ namespace SampleApplication
     {
         private double Sum;
         private DateTime dateTime;
+        private Product product;
 
         public Basket(){}
-        public void addProduct(Product product)
+        public void addProduct(Product _product)
         {
-            Sum += product.getPrice();
+            Sum += _product.getPrice();
+            product = _product;
         }
         public double getSum()
         {
