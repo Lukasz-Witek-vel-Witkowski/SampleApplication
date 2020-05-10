@@ -234,6 +234,7 @@ namespace SampleApplication
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Shopping";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

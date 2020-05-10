@@ -55,7 +55,18 @@ namespace SampleApplication
 
         private void bt_Other_products_Click(object sender, EventArgs e)
         {
+            FormInputNumber formInputNumber = new FormInputNumber();
+            formInputNumber.setManager(this.manager);
+            formInputNumber.Show();
+        }
 
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            if (manager.getNumber() != "")
+            {
+                ControllerProduct.Instance().RaiseModelChange(this, new ModelChangeEventArgs(int.Parse(manager.getNumber())));
+                manager.setNumber("");
+            }
         }
     }
 }

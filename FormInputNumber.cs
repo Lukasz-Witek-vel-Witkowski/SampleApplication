@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SampleApplication.SQL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace SampleApplication
             InitializeComponent();
         }
 
+
         private void fontDialog1_Apply(object sender, EventArgs e)
         {
 
@@ -24,12 +26,33 @@ namespace SampleApplication
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            manager.setNumber("");
+            this.Close();
         }
 
         private void TB_Number_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TB_Number_MouseDown(object sender, MouseEventArgs e)
+        {
+            FormKeybortNumeric formKeybortNumeric = new FormKeybortNumeric();
+            formKeybortNumeric.setManager(this.manager);
+            formKeybortNumeric.Show();
+        }
+
+        private void FormInputNumber_Activated(object sender, EventArgs e)
+        {
+            if (manager.getNumber() != "")
+            {
+                TB_Number.Text = manager.getNumber();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

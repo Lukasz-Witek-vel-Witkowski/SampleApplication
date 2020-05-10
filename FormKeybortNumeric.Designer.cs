@@ -1,4 +1,6 @@
-﻿namespace SampleApplication
+﻿using SampleApplication.SQL;
+
+namespace SampleApplication
 {
     partial class FormKeybortNumeric
     {
@@ -67,6 +69,7 @@
             this.but2.TabIndex = 1;
             this.but2.Text = "2";
             this.but2.UseVisualStyleBackColor = false;
+            this.but2.Click += new System.EventHandler(this.but2_Click);
             // 
             // but3
             // 
@@ -78,6 +81,7 @@
             this.but3.TabIndex = 2;
             this.but3.Text = "3";
             this.but3.UseVisualStyleBackColor = false;
+            this.but3.Click += new System.EventHandler(this.but3_Click);
             // 
             // but4
             // 
@@ -89,6 +93,7 @@
             this.but4.TabIndex = 3;
             this.but4.Text = "4";
             this.but4.UseVisualStyleBackColor = false;
+            this.but4.Click += new System.EventHandler(this.but4_Click);
             // 
             // but5
             // 
@@ -100,6 +105,7 @@
             this.but5.TabIndex = 4;
             this.but5.Text = "5";
             this.but5.UseVisualStyleBackColor = false;
+            this.but5.Click += new System.EventHandler(this.but5_Click);
             // 
             // but6
             // 
@@ -111,6 +117,7 @@
             this.but6.TabIndex = 5;
             this.but6.Text = "6";
             this.but6.UseVisualStyleBackColor = false;
+            this.but6.Click += new System.EventHandler(this.but6_Click);
             // 
             // but7
             // 
@@ -122,6 +129,7 @@
             this.but7.TabIndex = 6;
             this.but7.Text = "7";
             this.but7.UseVisualStyleBackColor = false;
+            this.but7.Click += new System.EventHandler(this.but7_Click);
             // 
             // but8
             // 
@@ -133,6 +141,7 @@
             this.but8.TabIndex = 7;
             this.but8.Text = "8";
             this.but8.UseVisualStyleBackColor = false;
+            this.but8.Click += new System.EventHandler(this.but8_Click);
             // 
             // but9
             // 
@@ -144,10 +153,13 @@
             this.but9.TabIndex = 8;
             this.but9.Text = "9";
             this.but9.UseVisualStyleBackColor = false;
+            this.but9.Click += new System.EventHandler(this.but9_Click);
             // 
             // TB_result
             // 
+            this.TB_result.AccessibleDescription = "";
             this.TB_result.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TB_result.Cursor = System.Windows.Forms.Cursors.Default;
             this.TB_result.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.TB_result.Location = new System.Drawing.Point(12, 12);
             this.TB_result.Name = "TB_result";
@@ -155,7 +167,7 @@
             this.TB_result.ShortcutsEnabled = false;
             this.TB_result.Size = new System.Drawing.Size(323, 38);
             this.TB_result.TabIndex = 9;
-            this.TB_result.Text = "0";
+            this.TB_result.Text = " ";
             this.TB_result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TB_result.TextChanged += new System.EventHandler(this.TB_result_TextChanged);
             // 
@@ -169,6 +181,7 @@
             this.but0.TabIndex = 10;
             this.but0.Text = "0";
             this.but0.UseVisualStyleBackColor = false;
+            this.but0.Click += new System.EventHandler(this.but0_Click);
             // 
             // butDelete
             // 
@@ -180,6 +193,7 @@
             this.butDelete.TabIndex = 11;
             this.butDelete.Text = "Usuń znak";
             this.butDelete.UseVisualStyleBackColor = false;
+            this.butDelete.Click += new System.EventHandler(this.butDelete_Click);
             // 
             // butOK
             // 
@@ -191,6 +205,7 @@
             this.butOK.TabIndex = 12;
             this.butOK.Text = "Zatwierdz";
             this.butOK.UseVisualStyleBackColor = false;
+            this.butOK.Click += new System.EventHandler(this.butOK_Click);
             // 
             // button1
             // 
@@ -202,6 +217,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Usuń numer";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // butCanel
             // 
@@ -213,6 +229,7 @@
             this.butCanel.TabIndex = 14;
             this.butCanel.Text = "Anuluj";
             this.butCanel.UseVisualStyleBackColor = false;
+            this.butCanel.Click += new System.EventHandler(this.butCanel_Click);
             // 
             // FormKeybortNumeric
             // 
@@ -258,5 +275,6 @@
         private System.Windows.Forms.Button butOK;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button butCanel;
+        private Manager manager;
     }
 }

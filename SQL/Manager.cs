@@ -16,6 +16,7 @@ namespace SampleApplication.SQL
         private string User;
         private string Password;
         private string Address;
+        private string Number;
         public Manager(String Path)
         {
             load(Path);
@@ -65,6 +66,13 @@ namespace SampleApplication.SQL
             return sql;
         }
 
-
+        internal void setNumber(string text)
+        {
+            Number = text;
+        }
+        internal string getNumber()
+        {
+            return Number;
+        }
     }
 }
