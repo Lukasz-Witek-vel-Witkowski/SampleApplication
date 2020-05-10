@@ -24,7 +24,7 @@ namespace SampleApplication
             client = new Client();
             InitializeComponent();
             ControllerProduct.Instance().RegisterView(this);
-            ModelProduct.Instance();
+            ModelBasket.Instance();
             ModelProducts.Instance();
             this.listProductsView = new ListProductsView(LV_Main);
             this.productView = new ProductView(LV_Option);
