@@ -24,7 +24,7 @@ namespace SampleApplication.Model
         }
         public void setProduct(Product product)
         {
-            product.getPrice();
+            basket.addProduct(product);
             
         }
         public Basket getProduction()
