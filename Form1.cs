@@ -19,8 +19,9 @@ namespace SampleApplication
     {
         public Form1()
         {
-
+            
             this.manager = new Manager("A:\\Project\\Wlasne\\SampleApplication\\Config.txt");
+
             client = new Client();
             InitializeComponent();
             ControllerProduct.Instance().RegisterView(this);
@@ -31,6 +32,8 @@ namespace SampleApplication
         }
         public void ModelChange(object sender, ModelChangeEventArgs e)
         {
+
+            
             Product product = manager.getManagerSQL().GetSqlTableProducts().getProduct(e.Number);
             if (product != null)
             {
@@ -43,5 +46,11 @@ namespace SampleApplication
 
         }
 
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+            int temp = (int)(this.Width/3.325f);
+            productView.reSize(temp);
+            listProductsView.reSize(this.Width - temp - 30);
+        }
     }
 }

@@ -43,16 +43,9 @@ namespace SampleApplication
             this.bt_info = new System.Windows.Forms.Button();
             this.bt_help = new System.Windows.Forms.Button();
             this.LV_Option = new System.Windows.Forms.ListView();
-            this.com1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.com2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Heading_main = new System.Windows.Forms.TextBox();
             this.Heading_option = new System.Windows.Forms.TextBox();
             this.LV_Main = new System.Windows.Forms.ListView();
-            this.comNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ComImage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ComName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ComDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ComPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -164,9 +157,6 @@ namespace SampleApplication
             this.LV_Option.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LV_Option.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.com1,
-            this.com2});
             this.LV_Option.HideSelection = false;
             this.LV_Option.Location = new System.Drawing.Point(3, 3);
             this.LV_Option.Name = "LV_Option";
@@ -174,17 +164,7 @@ namespace SampleApplication
             this.LV_Option.TabIndex = 0;
             this.LV_Option.UseCompatibleStateImageBehavior = false;
             this.LV_Option.View = System.Windows.Forms.View.Details;
-            // 
-            // com1
-            // 
-            this.com1.Text = "Właściwości";
-            this.com1.Width = 240;
-            // 
-            // com2
-            // 
-            this.com2.Text = "Wartość";
-            this.com2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.com2.Width = 300;
+
             // 
             // Heading_main
             // 
@@ -225,12 +205,7 @@ namespace SampleApplication
             this.LV_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LV_Main.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.comNumber,
-            this.ComImage,
-            this.ComName,
-            this.ComDescription,
-            this.ComPrice});
+  
             this.LV_Main.FullRowSelect = true;
             this.LV_Main.HideSelection = false;
             this.LV_Main.HotTracking = true;
@@ -242,30 +217,6 @@ namespace SampleApplication
             this.LV_Main.UseCompatibleStateImageBehavior = false;
             this.LV_Main.View = System.Windows.Forms.View.Details;
             this.LV_Main.SelectedIndexChanged += new System.EventHandler(this.LV_Main_SelectedIndexChanged);
-            // 
-            // comNumber
-            // 
-            this.comNumber.Text = "Nr.";
-            // 
-            // ComImage
-            // 
-            this.ComImage.Text = "Obraz";
-            // 
-            // ComName
-            // 
-            this.ComName.Text = "Nazwa";
-            this.ComName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ComDescription
-            // 
-            this.ComDescription.Text = "Opis";
-            this.ComDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ComDescription.Width = 240;
-            // 
-            // ComPrice
-            // 
-            this.ComPrice.Text = "Cena";
-            this.ComPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // timer
             // 
@@ -283,6 +234,7 @@ namespace SampleApplication
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Shopping";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -316,13 +268,7 @@ namespace SampleApplication
         private ListProductsView listProductsView;
         private ProductView productView;
         private Manager manager;
-        private System.Windows.Forms.ColumnHeader ComImage;
-        private System.Windows.Forms.ColumnHeader ComName;
-        private System.Windows.Forms.ColumnHeader ComDescription;
-        private System.Windows.Forms.ColumnHeader ComPrice;
-        private System.Windows.Forms.ColumnHeader comNumber;
-        private System.Windows.Forms.ColumnHeader com1;
-        private System.Windows.Forms.ColumnHeader com2;
+
     }
 }
 
