@@ -40,7 +40,6 @@ namespace SampleApplication
             this.bt_Other_products = new System.Windows.Forms.Button();
             this.bt_Add_quantity = new System.Windows.Forms.Button();
             this.bt_buy = new System.Windows.Forms.Button();
-            this.bt_info = new System.Windows.Forms.Button();
             this.bt_help = new System.Windows.Forms.Button();
             this.LV_Option = new System.Windows.Forms.ListView();
             this.Heading_main = new System.Windows.Forms.TextBox();
@@ -100,7 +99,6 @@ namespace SampleApplication
             this.flowLayoutPanel1.Controls.Add(this.bt_Other_products);
             this.flowLayoutPanel1.Controls.Add(this.bt_Add_quantity);
             this.flowLayoutPanel1.Controls.Add(this.bt_buy);
-            this.flowLayoutPanel1.Controls.Add(this.bt_info);
             this.flowLayoutPanel1.Controls.Add(this.bt_help);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 289);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -125,33 +123,27 @@ namespace SampleApplication
             this.bt_Add_quantity.TabIndex = 3;
             this.bt_Add_quantity.Text = "Podaj ilość ";
             this.bt_Add_quantity.UseVisualStyleBackColor = true;
+            this.bt_Add_quantity.Click += new System.EventHandler(this.bt_Add_quantity_Click);
             // 
             // bt_buy
             // 
             this.bt_buy.Location = new System.Drawing.Point(3, 43);
             this.bt_buy.Name = "bt_buy";
-            this.bt_buy.Size = new System.Drawing.Size(239, 30);
+            this.bt_buy.Size = new System.Drawing.Size(236, 30);
             this.bt_buy.TabIndex = 0;
             this.bt_buy.Text = "Zakończ i zapłać";
             this.bt_buy.UseVisualStyleBackColor = true;
-            // 
-            // bt_info
-            // 
-            this.bt_info.Location = new System.Drawing.Point(3, 79);
-            this.bt_info.Name = "bt_info";
-            this.bt_info.Size = new System.Drawing.Size(110, 29);
-            this.bt_info.TabIndex = 1;
-            this.bt_info.Text = "Informacje";
-            this.bt_info.UseVisualStyleBackColor = true;
+            this.bt_buy.Click += new System.EventHandler(this.bt_buy_Click);
             // 
             // bt_help
             // 
-            this.bt_help.Location = new System.Drawing.Point(119, 79);
+            this.bt_help.Location = new System.Drawing.Point(3, 79);
             this.bt_help.Name = "bt_help";
-            this.bt_help.Size = new System.Drawing.Size(120, 29);
+            this.bt_help.Size = new System.Drawing.Size(236, 29);
             this.bt_help.TabIndex = 2;
             this.bt_help.Text = "Pomoc";
             this.bt_help.UseVisualStyleBackColor = true;
+            this.bt_help.Click += new System.EventHandler(this.bt_help_Click);
             // 
             // LV_Option
             // 
@@ -211,12 +203,12 @@ namespace SampleApplication
             this.LV_Main.HotTracking = true;
             this.LV_Main.HoverSelection = true;
             this.LV_Main.Location = new System.Drawing.Point(3, 41);
+            this.LV_Main.MultiSelect = false;
             this.LV_Main.Name = "LV_Main";
             this.LV_Main.Size = new System.Drawing.Size(535, 400);
             this.LV_Main.TabIndex = 0;
             this.LV_Main.UseCompatibleStateImageBehavior = false;
             this.LV_Main.View = System.Windows.Forms.View.Details;
-            this.LV_Main.SelectedIndexChanged += new System.EventHandler(this.LV_Main_SelectedIndexChanged);
             // 
             // timer
             // 
@@ -245,12 +237,6 @@ namespace SampleApplication
 
         }
 
-        private void timer_Trick(object sender, EventArgs e)
-        {
-            timer.Stop();
-            ControllerProduct.Instance().RaiseModelChange(this, new ModelChangeEventArgs(client.getNext()));
-            timer.Start();
-        }
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         protected System.Windows.Forms.ListView LV_Main;
@@ -258,7 +244,6 @@ namespace SampleApplication
         protected System.Windows.Forms.ListView LV_Option;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button bt_buy;
-        private System.Windows.Forms.Button bt_info;
         private System.Windows.Forms.Button bt_help;
         private System.Windows.Forms.Button bt_Add_quantity;
         private System.Windows.Forms.Button bt_Other_products;
@@ -269,7 +254,6 @@ namespace SampleApplication
         private ListProductsView listProductsView;
         private ProductView productView;
         private Manager manager;
-
     }
 }
 

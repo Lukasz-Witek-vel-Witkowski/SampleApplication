@@ -19,25 +19,16 @@ namespace SampleApplication
         }
 
 
-        private void fontDialog1_Apply(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             manager.setNumber("");
             this.Close();
         }
 
-        private void TB_Number_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void TB_Number_MouseDown(object sender, MouseEventArgs e)
         {
-            FormKeybortNumeric formKeybortNumeric = new FormKeybortNumeric();
+            FormNumericKeyboard formKeybortNumeric = new FormNumericKeyboard();
             formKeybortNumeric.setManager(this.manager);
             formKeybortNumeric.Show();
         }

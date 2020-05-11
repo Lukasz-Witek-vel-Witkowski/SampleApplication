@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace SampleApplication.View
         private ColumnHeader ComDescription;
         private ColumnHeader ComPrice;
         private ColumnHeader comNumber;
+        private ImageList imageList;
 
         public ListProductsView(ListView list)
         {
@@ -27,31 +29,35 @@ namespace SampleApplication.View
             ComName = new ColumnHeader();
             ComDescription = new ColumnHeader();
             ComPrice = new ColumnHeader();
+            imageList = new ImageList();
+            imageList.ImageSize = new Size(50, 50);
             listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             comNumber,
             ComImage,
             ComName,
             ComDescription,
             ComPrice});
- 
-            comNumber.Text = "Nr.";
-            comNumber.TextAlign = HorizontalAlignment.Center;
-            comNumber.Width = 50;
 
-            ComImage.Text = "     Obraz    ";
+            comNumber.Text = "Obraz";
+            comNumber.TextAlign = HorizontalAlignment.Center;
+            comNumber.Width = 75;
+
+            ComImage.Text = "Nr.";
             ComImage.TextAlign = HorizontalAlignment.Center;
+            comNumber.Width = 50;
 
             ComName.Text = "Nazwa";
             ComName.TextAlign = HorizontalAlignment.Center;
-         
- 
+
+
             ComDescription.Text = "Opis";
             ComDescription.TextAlign = HorizontalAlignment.Center;
-           
+
             ComPrice.Text = "Cena";
             ComPrice.TextAlign = HorizontalAlignment.Center;
-          
+            comNumber.Width = 50;
 
+            listView.SmallImageList = imageList;
         }
         public void add(Product product)
         {
@@ -59,20 +65,14 @@ namespace SampleApplication.View
             {
                 throw new ArgumentNullException();
             }
-        
-            ListViewItem item = new ListViewItem(listView.Items.Count.ToString());
-            item.Checked = true;
-            ImageList imageList = new ImageList();
+
+            ListViewItem item = new ListViewItem("");
+            item.SubItems.Add(listView.Items.Count.ToString());
             if (product.getImage() != "")
             {
-                imageList.Images.Add(new Icon(product.getImage()));
-                listView.SmallImageList = imageList;
-                
-                item.StateImageIndex = 1;
-            }
-            else
-            {
-                item.SubItems.Add(product.getImage());
+                imageList.Images.Add(Image.FromFile(product.getImage()));
+                item.ImageIndex = imageList.Images.Count - 1;
+
             }
             item.SubItems.Add(product.getName());
             item.SubItems.Add(product.getDescription());
@@ -80,13 +80,19 @@ namespace SampleApplication.View
             listView.Items.Add(item);
             ModelProducts.Instance().addProduct(product);
         }
+
+        internal void Clear()
+        {
+            ModelProducts.Instance().Clear();
+            listView.Items.Clear();
+            imageList.Images.Clear();
+        }
+
         public void reSize(int width)
         {
-            width -= 50;
-            ComDescription.Width = width / 4;
-            ComName.Width = width / 4;
-            ComImage.Width = width / 3;
-            ComPrice.Width = width / 7;
+            width -= 200;
+            ComDescription.Width = width / 2;
+            ComName.Width = width / 2;
         }
     }
 }

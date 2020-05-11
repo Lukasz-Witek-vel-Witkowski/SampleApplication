@@ -49,7 +49,7 @@ namespace SampleApplication.View
             ValueName = new ListViewItem.ListViewSubItem(null, " ", Color.DarkGreen, SystemColors.Window, new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(238))));
             ValuePrice = new ListViewItem.ListViewSubItem(null, " ", Color.DarkGreen, SystemColors.Window, new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(238))));
             ValueSum = new ListViewItem.ListViewSubItem(null, "0.0", Color.Brown, SystemColors.Window, new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(238))));
-            
+
             ListViewItem listViewItem1 = new ListViewItem(new ListViewItem.ListViewSubItem[] {
             new ListViewItem.ListViewSubItem(null, "Nazwa:", Color.DarkGreen, SystemColors.Window, new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(238)))),
                 ValueName}, -1);
@@ -59,27 +59,35 @@ namespace SampleApplication.View
             ListViewItem listViewItem3 = new ListViewItem(new ListViewItem.ListViewSubItem[] {
             new ListViewItem.ListViewSubItem(null, "Do zapłaty: ", Color.Brown, SystemColors.Window, new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(238)))),
                 ValueSum}, -1);
-            
+
             listViewGroup1.Header = "Produkt";
             listViewGroup1.HeaderAlignment = HorizontalAlignment.Center;
             listViewGroup1.Name = "groupProduct";
             listViewGroup2.Header = "Koszyk";
             listViewGroup2.HeaderAlignment = HorizontalAlignment.Center;
             listViewGroup2.Name = "groupBasket";
-            
+
             listView.Groups.AddRange(new ListViewGroup[] {
             listViewGroup1,
             listViewGroup2});
-           
+
             listView.HideSelection = false;
             listViewItem1.Group = listViewGroup1;
             listViewItem2.Group = listViewGroup1;
             listViewItem3.Group = listViewGroup2;
-            
+
             listView.Items.AddRange(new ListViewItem[] {
             listViewItem1,
             listViewItem2,
             listViewItem3});
+        }
+
+        internal void Clear()
+        {
+            ModelBasket.Instance().Clear();
+            ValueName.Text = "";
+            ValuePrice.Text = "";
+            ValueSum.Text = "0.0";
         }
 
         public void add(Product product)

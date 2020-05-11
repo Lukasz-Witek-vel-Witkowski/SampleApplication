@@ -26,6 +26,17 @@ namespace SampleApplication
             ID = id;
             Image = image;
         }
+
+        internal void Clear()
+        {
+            Name = "";
+            Number = "";
+            Price = "";
+            Description = "";
+            ID = "";
+            Image = "";
+        }
+
         public string getName()
         {
             return Name;

@@ -36,8 +36,8 @@ namespace SampleApplication
 
         public int getNext()
         {
-            if(isNext())
-            return LData[iterator++];
+            if (isNext())
+                return LData[iterator++];
 
             return -1;
         }

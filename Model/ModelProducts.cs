@@ -29,5 +29,10 @@ namespace SampleApplication.Model
         {
             return Products.ToArray();
         }
+
+        internal void Clear()
+        {
+            Products.Clear();
+        }
     }
 }

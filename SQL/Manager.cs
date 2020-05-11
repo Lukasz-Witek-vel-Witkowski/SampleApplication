@@ -17,8 +17,11 @@ namespace SampleApplication.SQL
         private string Password;
         private string Address;
         private string Number;
+        private string Size;
         public Manager(String Path)
         {
+            Number = "";
+            Size = "";
             load(Path);
         }
 
@@ -73,6 +76,14 @@ namespace SampleApplication.SQL
         internal string getNumber()
         {
             return Number;
+        }
+        internal void setSize(string text)
+        {
+            Size = text;
+        }
+        internal string getSize()
+        {
+            return Size;
         }
     }
 }

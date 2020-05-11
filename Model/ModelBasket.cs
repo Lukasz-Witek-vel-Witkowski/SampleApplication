@@ -32,5 +32,9 @@ namespace SampleApplication.Model
             return basket.getSum();
         }
 
+        internal void Clear()
+        {
+            basket.Clear();
+        }
     }
 }

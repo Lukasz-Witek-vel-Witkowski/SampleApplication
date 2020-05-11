@@ -12,12 +12,13 @@ namespace SampleApplication
         private DateTime dateTime;
         private Product product;
 
-        public Basket(){
+        public Basket()
+        {
             Sum = 0.0;
         }
         public void addProduct(Product _product)
         {
-            Sum +=  double.Parse(_product.getPrice());
+            Sum += double.Parse(_product.getPrice());
             product = _product;
         }
         public double getSum()
@@ -27,6 +28,13 @@ namespace SampleApplication
         public void setDateTime(DateTime date)
         {
             dateTime = date;
+        }
+
+        internal void Clear()
+        {
+            Sum = 0.0;
+            product.Clear();
+
         }
     }
 }
